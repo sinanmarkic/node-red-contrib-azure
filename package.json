@@ -1,0 +1,19 @@
+{
+    "name": "node-red-contrib-azure",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "node-red": {
+        "nodes": {
+            "azure-fabric-auth": "MSAzureFabricConfigNode.js",
+            "azure-fabric-query": "MSAzureFabricQueryNode.js"
+        }
+    },
+    "scripts": {
+    "watch": "nodemon -e js,html,json --watch . -x \"rm -r /Users/$USER/.node-red/node_modules/@digitalnodecom/${PWD##*/} && npm install --prefix /Users/$USER/.node-red --save ./ --force && node-red\""
+    },
+    "dependencies": {
+        "@azure/msal-node": "^1.0.0",
+        "axios": "^0.21.1"
+      }
+  }
+  

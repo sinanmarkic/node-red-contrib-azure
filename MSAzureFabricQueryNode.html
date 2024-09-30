@@ -1,0 +1,57 @@
+<script type="text/javascript">
+    RED.nodes.registerType('azure-fabric-query',{
+        category: 'AzureFabric',
+        color: '#75b6e7',
+        icon: 'fa-cogs',
+        defaults: {
+            client: {value:"", type:"azure fabric-auth", required:true}, // Linked to your config node
+            url: {value:"", required:true}, // API URL to be queried
+            method: {value:"GET", required:true}, // HTTP method
+            headers: {value:""}, // Optional headers
+            body: {value:""} // Optional body for POST/PUT requests
+        },
+        inputs: 1,
+        outputs: 1,
+        label: function() {
+            return this.name || "Azure/Fabric API Query";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="azure-fabric-query">
+    <div class="form-row">
+        <label for="node-input-client"><i class="fa fa-tag"></i> Config</label>
+        <input type="text" id="node-input-client">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-link"></i> API URL</label>
+        <input type="text" id="node-input-url">
+    </div>
+    <div class="form-row">
+        <label for="node-input-method"><i class="fa fa-wrench"></i> HTTP Method</label>
+        <input type="text" id="node-input-method">
+    </div>
+    <div class="form-row">
+        <label for="node-input-headers"><i class="fa fa-header"></i> Headers (JSON)</label>
+        <input type="text" id="node-input-headers">
+    </div>
+    <div class="form-row">
+        <label for="node-input-body"><i class="fa fa-file-text"></i> Body (JSON)</label>
+        <input type="text" id="node-input-body">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="azure-fabric-query">
+    <p>Query an Azure/Fabric API using the access token from the config node.</p>
+    <h2>Inputs</h2>
+    <pre>
+{
+    "payload": {
+        "url": "https://api.example.com/endpoint", // URL to query
+        "method": "GET|POST|PUT|DELETE|PATCH", // HTTP method
+        "headers": { "Content-Type": "application/json" }, // Optional headers
+        "body": { "key": "value" } // Optional body for POST/PUT requests
+    }
+}
+    </pre>
+</script>

@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    RED.nodes.registerType('azure fabric-auth',{
+        category: 'config',
+        defaults: {
+            name: {value:"", required:true},
+            authUrl: {value:"", required:true},
+            tokenUrl: {value:"", required:true},
+            clientId: {value:"", required:true},
+            clientSecret: {value:"", required:true},
+            scope: {value:"", required:true}
+        },
+        label: function() {
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="azure-fabric-auth">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-bookmark"></i> Config Name</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-authUrl"><i class="fa fa-lock"></i> Auth URL</label>
+        <input type="text" id="node-config-input-authUrl">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-tokenUrl"><i class="fa fa-lock"></i> Access Token URL</label>
+        <input type="text" id="node-config-input-tokenUrl">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-clientId"><i class="fa fa-id-badge"></i> Client ID</label>
+        <input type="text" id="node-config-input-clientId">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-clientSecret"><i class="fa fa-key"></i> Client Secret</label>
+        <input type="password" id="node-config-input-clientSecret">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-scope"><i class="fa fa-scope"></i> Scope</label>
+        <input type="text" id="node-config-input-scope">
+    </div>
+</script>
