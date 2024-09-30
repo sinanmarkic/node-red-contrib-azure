@@ -4,7 +4,7 @@ module.exports = function (RED) {
     function AzureFabricQueryNode(config) {
         RED.nodes.createNode(this, config);
         var node = this;
-        node.azureFabricConfig = RED.nodes.getNode(node.conf);
+        node.azureFabricConfig = RED.nodes.getNode(config.client);
 
         // Ensure that the config node is present
         if (!node.azureFabricConfig) {

@@ -4,7 +4,7 @@
         color: '#75b6e7',
         icon: 'fa-cogs',
         defaults: {
-            conf: {value:"", type:"azure-fabric-auth", required:true}, // Linked to your config node
+            conf: {type:"azure-fabric-auth", required:true}, // Linked to your config node
             url: {value:"", required:true}, // API URL to be queried
             method: {value:"GET", required:true}, // HTTP method
             headers: {value:""}, // Optional headers
@@ -20,7 +20,7 @@
 
 <script type="text/html" data-template-name="azure-fabric-query">
     <div class="form-row">
-        <label for="node-input-client"><i class="fa fa-tag"></i> Config</label>
+        <label for="node-input-conf"><i class="fa fa-tag"></i> Config</label>
         <input type="text" id="node-input-client">
     </div>
     <div class="form-row">

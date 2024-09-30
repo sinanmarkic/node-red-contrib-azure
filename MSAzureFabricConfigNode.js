@@ -21,7 +21,7 @@ module.exports = function(RED) {
         const cachePlugin = new MSALCachePlugin(cacheFilePath);
 
         // Initialize MSAL client
-        this.conf = new msal.ConfidentialClientApplication({
+        this.client = new msal.ConfidentialClientApplication({
             auth: {
                 clientId: this.clientId,
                 authority: this.authUrl,
@@ -33,7 +33,7 @@ module.exports = function(RED) {
         });
 
         // Get the access token
-        this.conf.acquireTokenByClientCredential({
+        this.client.acquireTokenByClientCredential({
             scopes: [this.scope],
             authority: this.authUrl
         }).then(tokenResponse => {
