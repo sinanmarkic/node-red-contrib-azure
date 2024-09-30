@@ -49,5 +49,5 @@ module.exports = function(RED) {
     }
 
     // Register the node type in Node-RED
-    RED.nodes.registerType("azure fabric-auth", AzureFabricAuthNode);
+    RED.nodes.registerType("azure-fabric-auth", AzureFabricAuthNode);
 }
